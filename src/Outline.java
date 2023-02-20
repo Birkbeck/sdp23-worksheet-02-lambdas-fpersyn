@@ -26,7 +26,8 @@ public class Outline {
   public static void question_1b() {
     // sort words by length (descending)
     String[] words = words();
-    // TODO
+    Arrays.sort(words, (String a, String b) -> Integer.compare(b.length(), a.length()));
+    System.out.println("Q1B = " + Arrays.asList(words));
   }
 
   public static void question_1c() {
@@ -43,5 +44,6 @@ public class Outline {
 
   public static void main(String... args) {
     question_1a();
+    question_1b();
   }
 }
