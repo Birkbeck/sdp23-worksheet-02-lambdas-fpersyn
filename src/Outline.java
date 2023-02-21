@@ -33,7 +33,8 @@ public class Outline {
   public static void question_1c() {
     // sort words by first character
     String[] words = words();
-    // TODO
+    Arrays.sort(words, (String a, String b) -> Integer.compare(a.charAt(0), b.charAt(0)));
+    System.out.println("Q1C = " + Arrays.asList(words));
   }
 
   public static void question_1d() {
@@ -45,5 +46,6 @@ public class Outline {
   public static void main(String... args) {
     question_1a();
     question_1b();
+    question_1c();
   }
 }
