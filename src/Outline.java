@@ -54,11 +54,22 @@ public class Outline {
     System.out.println("Q2 = " + Arrays.asList(words));
   }
 
+  public static void question3() {
+    // test1
+    String result1 = StringUtils.betterString("car", "elephant", (s1, s2) -> s1.length() > s2.length());
+    System.out.println("Q3A = " + result1);
+
+    // test2
+    String result2 = StringUtils.betterString("car", "elephant", (s1, s2) -> true);
+    System.out.println("Q3B = " + result2);
+  }
+
   public static void main(String... args) {
     question_1a();
     question_1b();
     question_1c();
     question_1d();
     question2();
+    question3();
   }
 }
