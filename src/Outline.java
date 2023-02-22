@@ -64,6 +64,16 @@ public class Outline {
     System.out.println("Q3B = " + result2);
   }
 
+  public static void question4() {
+    // test1
+    String result1 = StringUtils.betterElement("car", "elephant", (s1, s2) -> s1.length() > s2.length());
+    System.out.println("Q4A = " + result1);
+
+    // test2
+    String result2 = StringUtils.betterElement("car", "elephant", (s1, s2) -> true);
+    System.out.println("Q4B = " + result2);
+  }
+
   public static void main(String... args) {
     question_1a();
     question_1b();
@@ -71,5 +81,6 @@ public class Outline {
     question_1d();
     question2();
     question3();
+    question4();
   }
 }
