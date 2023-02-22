@@ -1,5 +1,10 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Outline {
 
@@ -38,14 +43,20 @@ public class Outline {
   }
 
   public static void question_1d() {
-    // sort words by those that start with "e", then remaining letters.
+    // sort words by those that contain an "e", then remaining words.
     String[] words = words();
-    // TODO
+    Arrays.sort(words, (String a, String b) -> {
+      if (a.contains("e") && !b.contains("e")) return -1;
+      if (b.contains("e") && !a.contains("e")) return 1;
+      return 0;
+    });
+    System.out.println("Q1D = " + Arrays.asList(words));
   }
 
   public static void main(String... args) {
     question_1a();
     question_1b();
     question_1c();
+    question_1d();
   }
 }
