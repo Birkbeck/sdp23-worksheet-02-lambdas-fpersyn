@@ -1,3 +1,7 @@
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
 @FunctionalInterface
 interface TwoStringPredicate {
     public boolean test(String s1, String s2);
@@ -28,5 +32,9 @@ public class StringUtils {
         // and to replace TwoStringPredicate with TwoElementPredicate.
         if (pred.test(a, b)) return a;
         return b;
+    }
+
+    public static List<String> allMatches(List<String> ls, Predicate<String> pred) {
+        return ls.stream().filter(pred).collect(Collectors.toList());
     }
 }

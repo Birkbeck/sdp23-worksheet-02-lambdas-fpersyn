@@ -1,11 +1,14 @@
 import java.util.Arrays;
+import java.util.List;
 
 public class Outline {
 
   public static String[] words() {
       return new String[] {
+          "cat",
           "face",
           "wolf",
+          "bread",
           "compass",
           "elephant",
           "angular",
@@ -74,6 +77,16 @@ public class Outline {
     System.out.println("Q4B = " + result2);
   }
 
+  public static void question5() {
+    List<String> words = Arrays.asList(words());
+    List<String> shortWords = StringUtils.allMatches(words, s -> s.length() < 4);
+    List<String> wordsWithB = StringUtils.allMatches(words, s -> s.contains("b"));
+    List<String> evenLengthWords = StringUtils.allMatches(words, s -> (s.length() % 2) == 0);
+    System.out.println(shortWords);
+    System.out.println(wordsWithB);
+    System.out.println(evenLengthWords);
+  }
+
   public static void main(String... args) {
     question_1a();
     question_1b();
@@ -82,5 +95,6 @@ public class Outline {
     question2();
     question3();
     question4();
+    question5();
   }
 }
