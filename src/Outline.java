@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Outline {
 
@@ -87,6 +88,22 @@ public class Outline {
     System.out.println("Q5C = " + evenLengthWords);
   }
 
+  public static void question6() {
+    List<String> words = Arrays.asList(words());
+    // predicates
+    Predicate<String> lengthLessThan4 = s -> s.length() < 4;
+    Predicate<String> containsB = s -> s.contains("b");
+    Predicate<String> lengthEven = s -> s.length() % 2 == 0;
+    // lists
+    List<String> shortWords = StringUtils.allMatches(words, lengthLessThan4);
+    List<String> wordsWithB = StringUtils.allMatches(words, containsB);
+    List<String> evenLengthWords = StringUtils.allMatches(words, lengthEven);
+    // print results
+    System.out.println("Q6A = " + shortWords);
+    System.out.println("Q6B = " + wordsWithB);
+    System.out.println("Q6C = " + evenLengthWords);
+  }
+
   public static void main(String... args) {
     question_1a();
     question_1b();
@@ -96,5 +113,6 @@ public class Outline {
     question3();
     question4();
     question5();
+    question6();
   }
 }
