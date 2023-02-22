@@ -1,10 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Outline {
 
@@ -53,10 +47,18 @@ public class Outline {
     System.out.println("Q1D = " + Arrays.asList(words));
   }
 
+  public static void question2() {
+    // using answer Q1D, extract number calc to static method StringUtils.eChecker()
+    String[] words = words();
+    Arrays.sort(words, StringUtils::eChecker);
+    System.out.println("Q2 = " + Arrays.asList(words));
+  }
+
   public static void main(String... args) {
     question_1a();
     question_1b();
     question_1c();
     question_1d();
+    question2();
   }
 }
