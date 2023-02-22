@@ -39,7 +39,7 @@ public class StringUtils {
         return ls.stream().filter(pred).toList();
     }
 
-    public static List<String> transformedList(List<String> ls, Function<String, String> func) {
+    public static <T> List<T> transformedList(List<T> ls, Function<T, T> func) {
         return ls.stream().map(func).toList();
     }
 }
