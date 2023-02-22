@@ -35,6 +35,6 @@ public class StringUtils {
     }
 
     public static List<String> allMatches(List<String> ls, Predicate<String> pred) {
-        return ls.stream().filter(pred).collect(Collectors.toList());
+        return ls.stream().filter(pred).toList();
     }
 }

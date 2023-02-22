@@ -82,9 +82,9 @@ public class Outline {
     List<String> shortWords = StringUtils.allMatches(words, s -> s.length() < 4);
     List<String> wordsWithB = StringUtils.allMatches(words, s -> s.contains("b"));
     List<String> evenLengthWords = StringUtils.allMatches(words, s -> (s.length() % 2) == 0);
-    System.out.println(shortWords);
-    System.out.println(wordsWithB);
-    System.out.println(evenLengthWords);
+    System.out.println("Q5A = " + shortWords);
+    System.out.println("Q5B = " + wordsWithB);
+    System.out.println("Q5C = " + evenLengthWords);
   }
 
   public static void main(String... args) {
