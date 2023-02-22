@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Outline {
@@ -104,6 +105,21 @@ public class Outline {
     System.out.println("Q6C = " + evenLengthWords);
   }
 
+  public static void question7() {
+    List<String> words = Arrays.asList(words());
+    // functions
+    Function<String, String> addExclamation = s -> s + "!";
+    Function<String, String> replaceIWithEye = s -> s.replace("i", "eye");
+    // lists
+    List<String> excitingWords = StringUtils.transformedList(words, addExclamation);
+    List<String> eyeWords = StringUtils.transformedList(words, replaceIWithEye);
+    List<String> upperCaseWords = StringUtils.transformedList(words, String::toUpperCase);
+    // print results
+    System.out.println("Q7A = " + excitingWords);
+    System.out.println("Q7B = " + eyeWords);
+    System.out.println("Q7C = " + upperCaseWords);
+  }
+
   public static void main(String... args) {
     question_1a();
     question_1b();
@@ -114,5 +130,6 @@ public class Outline {
     question4();
     question5();
     question6();
+    question7();
   }
 }

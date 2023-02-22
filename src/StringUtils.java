@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -36,5 +37,9 @@ public class StringUtils {
 
     public static <T> List<T> allMatches(List<T> ls, Predicate<T> pred) {
         return ls.stream().filter(pred).toList();
+    }
+
+    public static List<String> transformedList(List<String> ls, Function<String, String> func) {
+        return ls.stream().map(func).toList();
     }
 }
